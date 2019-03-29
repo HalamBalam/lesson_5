@@ -7,7 +7,7 @@ module InstanceCounter
   module ClassMethods
     
     def instances
-      @instances
+      @instances ||= 0
     end
 
     def instances=(value)
@@ -20,7 +20,6 @@ module InstanceCounter
     private
 
     def register_instance
-      self.class.instances = 0 if self.class.instances.nil?
       self.class.instances += 1
     end 
   end

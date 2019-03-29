@@ -5,8 +5,6 @@ class Route
 
   attr_reader :stations
 
-  @instances = 0
-
   def initialize(start, finish)
     @stations = [start, finish]
     register_instance

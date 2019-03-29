@@ -7,7 +7,7 @@ class Train
 
   attr_reader :number, :speed, :wagons
 
-  @instances = 0
+  @@trains = {}
 
   def self.find(number)
     @@trains[number]
@@ -85,9 +85,5 @@ class Train
       "#{type_str} поезд № #{number} (вагонов: #{wagons_count}, скорость: #{speed}, текущая станция: #{current_station.name})"
     end
   end
-
-  private
-
-  @@trains = {}
 
 end
